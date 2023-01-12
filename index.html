@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignmnet 402-03</title>
+    <style>
+        .innerdiv{
+            display: flex;
+            align-items: center;
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>My Shopping List</h1>
+    <div class="maindiv">
+        <label>Enter a New Item: </label><input type="text" id="Inpute">
+        <button onclick="clickHere()">Add item</button>
+    </div>
+    <ul id="ul"></ul>
+
+    <script>
+        let Inpute1=document.getElementById("Inpute")
+        let ul=document.getElementById("ul")
+      function clickHere() {
+        
+         let div=document.createElement("div")
+         div.classList.add("innerdiv")
+         let li=document.createElement("li")
+         li.style.padding="1rem"
+         let button=document.createElement("button")
+         button.innerText="delete"
+         button.setAttribute("onclick","delete1(this)")
+
+
+         let Inpute=document.getElementById("Inpute").value
+        //  console.log(Inpute);
+         let liNode=document.createTextNode(Inpute)
+        
+         // console.log(liNode.innerText);
+         li.appendChild(liNode)
+         div.appendChild(li)
+         div.appendChild(button)
+         ul.appendChild(div)
+        
+         Inpute1.value=""
+      }
+
+   
+    function delete1(ref){
+        // console.log();
+        ref.parentElement.remove();
+    }
+      
+    </script>
+</body>
+</html>
